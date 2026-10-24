@@ -1,108 +1,52 @@
 # Aptitude Quiz Web Application
 
-## About the Project
-
-The Aptitude Quiz Web Application is a web-based platform designed to help students practice aptitude questions and improve their problem-solving skills. It provides an interactive quiz experience with different categories, a timer, progress tracking, and instant results.
+A full-stack single-page aptitude quiz application built with React, Express, Node.js, and MongoDB.
 
 ## Features
+- Professional responsive dashboard UI
+- Quantitative Aptitude, Logical Reasoning, and Verbal Ability categories
+- Timed quiz sessions with progress tracking
+- Instant score, accuracy, and answer review
+- Quiz questions loaded from the Express API (MongoDB when configured, starter questions otherwise)
+- MongoDB question seeding script
+- Input validation and a simple health endpoint
 
-* Interactive and user-friendly dashboard.
-* Multiple quiz categories.
-* Quantitative Aptitude, Logical Reasoning, and Verbal Ability.
-* Multiple-choice questions with answer options.
-* Timer for quiz practice.
-* Question progress tracking.
-* Instant score calculation and results.
-* Answer review after completing a quiz.
-* MongoDB database integration for storing quiz questions.
-* Responsive and attractive user interface.
+## Requirements
+- Node.js 20+
+- MongoDB local installation or a MongoDB Atlas connection string
 
-## Technologies Used
+## Setup
 
-* **Frontend:** React.js, Vite, HTML, CSS, JavaScript
-* **Backend:** Node.js, Express.js
-* **Database:** MongoDB
-* **ODM:** Mongoose
-* **Icons:** Lucide React
-
-## Project Structure
-
-```text
-aptitude-quiz-web-app/
-├── client/
-│   └── src/
-│       ├── App.jsx
-│       ├── main.jsx
-│       └── styles.css
-├── server/
-│   └── src/
-│       ├── data/
-│       ├── models/
-│       ├── routes/
-│       ├── index.js
-│       └── seed.js
-├── README.md
-└── .gitignore
-```
-
-## Installation and Setup
-
-### 1. Clone the Repository
-
-```bash
-git clone YOUR_REPOSITORY_URL
-cd aptitude-quiz-web-app
-```
-
-### 2. Start the Backend
-
+### 1. Backend
 ```bash
 cd server
 npm install
 ```
+Copy `.env.example` to `.env` and set `MONGODB_URI`.
 
-Create a `.env` file in the `server` folder and configure your MongoDB connection string and server port using the settings specified in `.env.example`.
-
-Seed the database:
-
+Seed starter questions into MongoDB:
 ```bash
 npm run seed
 ```
 
 Start the backend:
-
 ```bash
 npm run dev
 ```
+Backend runs at `http://localhost:5000`.
 
-### 3. Start the Frontend
-
-Open a new terminal:
-
+### 2. Frontend
+Open a second terminal:
 ```bash
 cd client
 npm install
 npm run dev
 ```
+Open the Vite URL shown in the terminal (usually `http://localhost:5173`).
 
-Open the local URL displayed in the terminal to use the application.
+## Environment variables
+See `server/.env.example`. Never commit your real `.env` file.
 
-## Learning Outcomes
-
-* Developed a full-stack web application using the MERN stack.
-* Gained experience in React component development.
-* Implemented REST API integration using Express.js.
-* Integrated MongoDB for data storage.
-* Practiced interactive quiz design, timer functionality, and score calculation.
-
-## Future Enhancements
-
-* User registration and login.
-* User profiles and quiz history.
-* Leaderboard and performance analytics.
-* Difficulty-based question selection.
-* Admin panel for managing questions.
-
-## Author
-
-Sakshi Shinde
+## Notes
+- The frontend is a single-page application; navigation between dashboard, quiz, and results happens without page reloads.
+- If MongoDB is not configured or the database has no questions, the API returns built-in starter questions so you can test the UI.
