@@ -1,4 +1,4 @@
-# Aptitude Quiz Web Application
+# Elevate - Aptitude Quiz Web Application
 
 A full-stack single-page aptitude quiz application built with React, Express, Node.js, and MongoDB.
 
